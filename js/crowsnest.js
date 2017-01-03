@@ -19,12 +19,10 @@ L.mapbox.accessToken = 'pk.eyJ1IjoiY29yZS1naXMiLCJhIjoiaUxqQS1zQSJ9.mDT5nb8l_dWI
   // build map
   var map = L.mapbox.map('map', 'mapbox.light').setView([0,0],1);
   var points = L.featureGroup();
-  var approvalBucklin = L.featureGroup();
-  var approvalPreferential = L.featureGroup();
-  var cumulativeVoting = L.featureGroup();
-  var instantRunoff = L.featureGroup();
-  var limitedVote = L.featureGroup();
-  var singleTransferable = L.featureGroup();
+  var brewery = L.featureGroup();
+  var restaurant = L.featureGroup();
+  var groceryStore = L.featureGroup();
+  var attraction = L.featureGroup();
   
   for(var i=0;i<data.length;i++) {
     var marker = L.marker([parseFloat(data[i].lat), parseFloat(data[i].lng)]);
