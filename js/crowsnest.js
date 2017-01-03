@@ -29,7 +29,7 @@ L.mapbox.accessToken = 'pk.eyJ1IjoiY29yZS1naXMiLCJhIjoiaUxqQS1zQSJ9.mDT5nb8l_dWI
     var popupInfo = metadata(data[i]);
 	
 	//type in your desired dimensions for the markers; the marker will always be square
-	var iconDim = 31;
+	var iconDim = 40;
 	category = data[i].category.toLowerCase();
 	marker.setIcon( L.icon({
 		iconUrl: "markers/" + data[i].markerfile,
