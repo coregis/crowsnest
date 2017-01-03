@@ -99,7 +99,7 @@ function metadata(properties) {
     var prop = obj[p];
     if (prop != 'lat' &&
         prop != 'lng' &&
-        prop != 'marker-file' &&
+        prop != 'markerfile' &&
 		properties[prop].length > 0) {
       //prop is the field name from the spreadsheet; properties is the geoJSON generated from one row of the spreadsheet
 	  //INSTEAD OF PROP, NEED TO WRITE A NEW FUNCTION THAT DOES TEXT SUBSTITUTIONS
