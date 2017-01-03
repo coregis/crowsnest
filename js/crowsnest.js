@@ -63,107 +63,11 @@ L.mapbox.accessToken = 'pk.eyJ1IjoiY29yZS1naXMiLCJhIjoiaUxqQS1zQSJ9.mDT5nb8l_dWI
 	"Attractions": attraction,
   };
   
-  /*function chooseIcon(category, active) {  
-	  if (active.toLowerCase() === "yes"){
-		  if (category === "limited vote") {
-			  return "336699-15.svg";
-		  }
-		  else if (category === "instant runoff voting") {
-			  return "cc3333-15.svg";
-		  }
-		  else if (category === "single transferable vote") {
-			  return "cc3333-15.svg";
-		  }
-		  else if (category === "approval voting (bucklin system)") {
-			  return "fc9d9d-15.svg";
-		  }
-		  else if (category === "cumulative voting") {
-			  return "ffff00-15.svg";
-		  }
-		  else if (category === "approval voting (preferential voting)") {
-			  return "ffff00-15.svg";
-		  }
-	  }
-	  else {
-		  if (category === "limited vote") {
-			  return "66ccff-15.svg";
-		  }
-		  else if (category === "instant runoff voting") {
-			  return "fc9d9d-15.svg";
-		  }
-		  else if (category === "single transferable vote") {
-			  return "fc9d9d-15.svg";
-		  }
-		  else if (category === "approval voting (bucklin system)") {
-			  return "fc9d9d-15.svg";
-		  }
-		  else if (category === "cumulative voting") {
-			  return "ffff99-15.svg";
-		  }
-		  else if (category === "approval voting (preferential voting)") {
-			  return "fc9d9d-15.svg";
-		  }
-	  }
-	  return "black.svg";
-  }*/
-  
-  /*Because of additional permutations of state/school/past/current/ need to set the icons from the marker-file attribute*/
-  
-/*  function chooseIcon(marker-file) {  
-	  if (marker-file === "cumulative-current-school.svg") {
-		  return "cumulative-current-school.svg";
-	  }
-	  else if (marker-file === "cumulative-current.svg") {
-		  return "cumulative-current.svg";
-	  }
-	  else if (marker-file === "cumulative-current-state.svg") {
-		  return "cumulative-current-state.svg";
-	  }	  
-	  else if (marker-file === "cumulative-past-school.svg") {
-		  return "cumulative-past-school.svg";
-	  }
-	  else if (marker-file === "cumulative-past-state.svg") {
-		  return "cumulative-past-state.svg";
-	  }
-	  else if (marker-file === "cumulative-past.svg") {
-		  return "cumulative-past.svg";
-	  }	  
-	  else if (marker-file === "limited-current-school.svg") {
-		  return "limited-current-school.svg";
-	  }
-	  else if (marker-file === "limited-current.svg") {
-		  return "limited-current.svg";
-	  }
-	  else if (marker-file === "limited-past-school.svg") {
-		  return "limited-past-school.svg";
-	  }
-	  else if (marker-file === "limited-past.svg") {
-		  return "limited-past.svg";
-	  }
-	  else if (marker-file === "ranked-choice-current.svg") {
-		  return "ranked-choice-current.svg";
-	  }
-	  else if (marker-file === "ranked-choice-past-school.svg") {
-		  return "ranked-choice-past-school.svg";
-	  }
-	  else if (marker-file === "ranked-choice-past-state.svg") {
-		  return "ranked-choice-past-state.svg";
-	  }
-	  else if (marker-file === "ranked-choice-past.svg") {
-		  return "ranked-choice-past.svg";
-	  }		
-	  return "black.svg";
-  }
-*/
-  
   L.control.layers(false, overlayMaps).addTo(map);
-  map.addLayer(approvalBucklin);
-  map.addLayer(approvalPreferential);
-  map.addLayer(cumulativeVoting);
-  map.addLayer(instantRunoff);
-  map.addLayer(limitedVote);
-  map.addLayer(singleTransferable);
-  
+  map.addLayer(brewery);
+  map.addLayer(restaurant);
+  map.addLayer(groceryStore);
+  map.addLayer(attraction);
   
   var bounds = points.getBounds();
   map.fitBounds(bounds, {padding:[10,10]});
