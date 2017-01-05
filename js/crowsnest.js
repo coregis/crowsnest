@@ -57,13 +57,31 @@ L.mapbox.accessToken = 'pk.eyJ1IjoiY29yZS1naXMiLCJhIjoiaUxqQS1zQSJ9.mDT5nb8l_dWI
   }
 
   var overlayMaps = {
-    "Breweries": brewery,
-	"Restaurants": restaurant,
-	"Grocery Stores": groceryStore,
-	"Attractions": attraction,
+    "<img src='markers/brewery.svg' height=24>Breweries": brewery,
+	"<img src='markers/restaurant.svg' height=24>Restaurants": restaurant,
+	"<img src='markers/grocery.svg' height=24>Grocery Stores": groceryStore,
+	"<img src='markers/attraction.svg' height=24>Attractions": attraction,
   };
   
-  L.control.layers(false, overlayMaps).addTo(map);
+    //This is intended to make the legned collapse by default on mobile devices
+  //from http://www.howtocreate.co.uk/tutorials/javascript/browserwindow
+  var windowWidth = 0;
+  
+  if( typeof( window.innerWidth ) === 'number' ) {
+  windowWidth = window.innerWidth;
+} else if( document.documentElement && document.documentElement.clientWidth ) {
+  windowWidth = document.documentElement.clientWidth;
+} else if( document.body && document.body.clientWidth ) {
+  windowWidth = document.body.clientWidth;
+}
+
+if (windowWidth < 400) {
+  var collapseLegend = true;
+} else {
+  var collapseLegend = false;
+}
+  
+  L.control.layers(false, overlayMaps, {position: 'bottomleft', collapsed:collapseLegend}).addTo(map);
   map.addLayer(brewery);
   map.addLayer(restaurant);
   map.addLayer(groceryStore);
