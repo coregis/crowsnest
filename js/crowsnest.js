@@ -20,6 +20,7 @@ L.mapbox.accessToken = 'pk.eyJ1IjoiY29yZS1naXMiLCJhIjoiaUxqQS1zQSJ9.mDT5nb8l_dWI
   var map = L.mapbox.map('map', 'mapbox.light').setView([0,0],1);
   var points = L.featureGroup();
   var brewery = L.featureGroup();
+  var coffee = L.featureGroup();
   var restaurant = L.featureGroup();
   var groceryStore = L.featureGroup();
   var attraction = L.featureGroup();
@@ -45,6 +46,9 @@ L.mapbox.accessToken = 'pk.eyJ1IjoiY29yZS1naXMiLCJhIjoiaUxqQS1zQSJ9.mDT5nb8l_dWI
 	if (category === "brewery") {
 	  brewery.addLayer(marker);
 	}
+	if (category === "coffee") {
+	  brewery.addLayer(marker);
+	}
 	else if (category === "restaurant") {
 	   restaurant.addLayer(marker);
 	}
@@ -58,6 +62,7 @@ L.mapbox.accessToken = 'pk.eyJ1IjoiY29yZS1naXMiLCJhIjoiaUxqQS1zQSJ9.mDT5nb8l_dWI
 
   var overlayMaps = {
     "<img src='markers/brewery.svg' height=24>Breweries": brewery,
+    "<img src='markers/coffee.svg' height=24>Coffee": coffee,
 	"<img src='markers/restaurant.svg' height=24>Restaurants": restaurant,
 	"<img src='markers/grocery.svg' height=24>Grocery Stores": groceryStore,
 	"<img src='markers/attraction.svg' height=24>Attractions": attraction,
@@ -83,6 +88,7 @@ if (windowWidth < 400) {
   
   L.control.layers(false, overlayMaps, {position: 'bottomleft', collapsed:collapseLegend}).addTo(map);
   map.addLayer(brewery);
+  map.addLayer(coffee);
   map.addLayer(restaurant);
   map.addLayer(groceryStore);
   map.addLayer(attraction);
